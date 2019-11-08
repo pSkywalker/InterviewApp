@@ -1,0 +1,25 @@
+
+<h3 id="adminHeading"> All guests </h3>
+<p class="addGuest"> Click <a routerLink="/" >here</a> to add a guest </p>
+
+
+<div class="row">
+    <div *ngFor="let guest of allGuests; index as x" class="col-md-4">
+        <div id="guest" class="card"> 
+            <br>
+            <h3> {{ guest.firstName }} </h3>    
+            <h5> {{ guest.lastName }} </h5>
+            <hr>
+            <p> Street : {{ guest.street }} </p>
+            <p> City : {{ guest.city }} </p>
+            <p> Province : {{ guest.province | uppercase }} </p>
+            <p> Postal Code : {{ guest.postalCode }} </p>
+            <p> Email Address : {{ guest.emailAddress }} </p>
+            <p> Phone Number : {{ guest.phoneNumber }} </p>
+            <hr> 
+            <button class="btn btn-danger" (click)="removeGuest(x)"> Remove </button>
+            <br>
+        </div>
+    </div>
+</div>
+

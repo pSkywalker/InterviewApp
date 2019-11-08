@@ -1,0 +1,74 @@
+
+<h3 id="eventInputHeading"> Add guest for the event! </h3>
+<p class="admin"> Administrator? Click <a routerLink="/adminLogin" >here</a> to login </p>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div [ngClass]="(errorList.length>0)?'errorBox':'errorBoxHidden'" class="col-md-8">
+        <p> There was a problem adding the guest to the event </p>
+        <ul id="errorList">
+            <li *ngFor="let error of errorList"> {{ error }} </li> 
+        </ul>
+    </div>   
+</div>
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+        <form class="guestForm" [formGroup]="guestInputForm" (ngSubmit)="addGuest(guestInputForm.value)">
+                        
+            <label> First name </label>
+            <input [ngClass]="{'errorInput': firstNameError}" class="form-control" type="text" formControlName="firstName">
+            <br> 
+            <label> Last name </label>
+            <input [ngClass]="{'errorInput': lastNameError}" class="form-control" type="text" formControlName="lastName">
+            <br>
+            <label> Street </label>
+            <input [ngClass]="{'errorInput': streetError}" class="form-control" type="text" formControlName="street">
+            <br>
+            <label> City </label>
+            <input [ngClass]="{'errorInput': cityError}" class="form-control" type="text" formControlName="city">
+            <br>                    
+            <label>  Province </label>
+            <select [ngClass]="{'errorInput': provinceError}" class="form-control" formControlName="province">
+                <option value="ab"> AB </option>
+                <option value="bc"> BC </option>
+                <option value="on"> ON </option>
+                <option value="qc"> QC </option>
+                <option value="mb"> MB </option>
+                <option value="nb"> NB </option>
+                <option value="nl"> NL </option>
+                <option value="nt"> NT </option>
+                <option value="ns"> NS </option>
+                <option value="nu"> NU </option>
+                <option value="pe"> PE </option>
+                <option value="sk"> SK </option>
+                <option value="yt"> YT </option>
+            </select> 
+            <br>        
+            <label> Postal Code </label>
+            <input [ngClass]="{'errorInput': postalCodeError}" class="form-control" type="text" formControlName="postalCode">
+            <br>
+            <label> Email Address </label>
+            <input [ngClass]="{'errorInput': emailAddressError}" class="form-control" type="email" formControlName="emailAddress">
+            <br>
+            <label> Phone Number </label>
+            <input [ngClass]="{'errorInput': phoneNumberError}"  class="form-control" type="email" formControlName="phoneNumber">
+            <br>
+            <button type="submit" class="btn btn-lg btn-primary"> Add to event! </button>
+
+        </form>
+        
+        <br>
+        
+        <p [ngClass]="(addedGuest)?'success':'successHidden'"> You added the guest! </p> 
+
+        <br> 
+
+    </div>
+
+   
+
+</div>

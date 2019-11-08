@@ -1,0 +1,45 @@
+
+#eventInputHeading { 
+    margin-top: 5%;
+    text-align: center;
+}
+
+.admin{ 
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.guestForm{ 
+}
+
+.errorInput { 
+    border: 2px solid #FF0000;
+}
+
+
+.errorBoxHidden{ 
+    display: none;
+}
+
+.errorBox{
+    border: 2px solid #FF0000;
+    padding: 2%;
+    margin-bottom: 4%; 
+    display: block;
+}
+
+.errorBox p{ 
+    font-size: 25px;
+}
+
+#errorList { 
+    color: #FF0000
+}
+
+.successHidden{ 
+    visibility: hidden; 
+}
+.success{ 
+   color :  #00b200;
+   visibility: visible;
+}
